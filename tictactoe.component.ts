@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
       <div *ngIf="winner === 'X' || winner === 'O'" id="winnerArea" class="winner">
         Winner: <span>{{ winner }}</span>
       </div>
-      <div id="statusArea" class="status">
+      <div 
+        *ngIf="!this.xPlayer.isWinner && !this.oPlayer.isWinner"
+        id="statusArea"
+        class="status">
         Next player: <span>{{ currentPlayer }}</span>
       </div>
     </section>
     <section>
-      <button (click)="newGame()">Reset</button>
+      <button id="reset-button" (click)="newGame()">Reset</button>
     </section>
     <section id="gaming-section">
       <ol>
@@ -37,6 +40,10 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [
     `#gaming-section {
+      margin-top: 15px;
+    }
+    `,
+    `#reset-button {
       margin-top: 15px;
     }
     `,
