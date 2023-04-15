@@ -1,2 +1,2 @@
 # tic-tac-toe
-Basic Angular component implementation of TicTacToe
+Basic Angular and React implementations of TicTacToe
